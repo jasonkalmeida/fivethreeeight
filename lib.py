@@ -17,8 +17,9 @@ page = requests.get("https://data.fivethirtyeight.com")
 soup = BeautifulSoup(page.content, 'html.parser')
 #print(soup.prettify())
 
-pollTime = soup.find("table", {"id": "dataIndex"}).find("td", {"id": "polls"}).parent.find("td", {"class": "date"})['datetime']
+siteTime = soup.find("table", {"id": "dataIndex"}).find("td", {"id": "polls"}).parent.find("td", {"class": "date"})['datetime']
 
+pollTime = datetime.datetime
 
 
 print(pollTime)
